@@ -1,18 +1,43 @@
-<img width="772" height="250" alt="gronnfalk1" src="https://github.com/user-attachments/assets/c0f60459-d101-4240-bf7e-4c2945934c28" />
+<a href="https://liamprosser77.github.io/gronnfalk/?q=">
+  <img
+    src="https://github.com/user-attachments/assets/cff7ab19-66cf-4a35-a67c-2268849c6e1b"
+    alt="GronnFalk"
+    width="512"
+  >
+</a>
 
-
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0" />
   <img src="https://img.shields.io/badge/Privacy--first-yes-brightgreen.svg" alt="Privacy-first: yes" />
   <img src="https://img.shields.io/github/last-commit/LiamProsser77/gronnfalk" alt="Last commit" />
+  <img src="https://img.shields.io/github/stars/LiamProsser77/gronnfalk" alt="GitHub stars" />
 </p>
 <p align="center">
   <strong>"The simple soap search"</strong><br/>
 
-<p align="center">
-GronnFalk is an Norwegian, open-source, privacy-focused metasearch engine built for a simple and independent search experience. 
+GronnFalk is an open-source, privacy-focused metasearch engine built for a simple and independent search experience.
+
+<details>
+  <summary><strong>Search Engines crawled by GronnFalk</strong></summary>
+ 
+  <a href="https://searx.dockhosting.dev/">SearXNG</a>
+  
+  <a href="https://search.yonderly.org">4get</a>
+  
+  <a href="https://duckduckgo.com/">DuckDuckGo</a>
+  
+  <a href="https://search.brave.com/">Brave</a>
+  
+  <a href="https://google.com">Google</a>
+  
+  </details>
+
+## Instances
+Make your own GronnFalk Instance at: <a href="https://github.com/LiamProsser77/gronnfalk-instances">Gronnfalk Instances</a></li>
 
 ## Install
+<details>
+  <summary><strong>Installation Guide</strong></summary>
 
 <h3> Run GronnFalk with Docker</h3>
 
@@ -70,9 +95,14 @@ docker compose up -d --build</code></pre>
   <li><code>.dockerignore</code> — Excludes unnecessary files from the image.</li>
 </ul>
 
+</details>
 
-## Deploy with Railway
+## Deploy
 
+<details>
+  <summary><strong>Deploy Guide</strong></summary>
+
+<h3> Deploy with Railway</h3>
 <a href="https://railway.com/">
     <img src="https://img.shields.io/badge/Railway-Supported-8B5CF6?logo=railway&logoColor=white" alt="Railway Supported">
   </a>
@@ -107,6 +137,8 @@ Railway will automatically use the included `Dockerfile`.
 
 <ul> <li><code>render.yaml</code> — Configures the GronnFalk Render deployment.</li> </ul>
 
+ </details>
+ 
  ## About GronnFalk
 
 GronnFalk was founded on **August 14, 2026**, from an unexpected source of inspiration: a bar of soap.
@@ -130,11 +162,14 @@ The project is developed publicly on GitHub, where the community can explore the
 
 The name **GronnFalk** was inspired by Norwegian-style naming, giving the project its distinctive sound and character. In English it means **Green Falcon**.
 
-### Screenshots
-<img width="562" height="230" alt="Screenshot 2026-08-18 12 25 59 PM" src="https://github.com/user-attachments/assets/dd60ac41-34be-4d0e-88f4-cb054e533c82" />
-<img width="562" height="230" alt="Screenshot 2026-08-18 12 25 50 PM" src="https://github.com/user-attachments/assets/5ad533f9-5596-4777-a072-6e2d60f03e24" />
-<img width="562" height="230" alt="Screenshot 2026-08-18 12 26 15 PM" src="https://github.com/user-attachments/assets/6601aade-6577-4208-a55a-96ddbda82c21" />
+<details>
+  <summary><strong>Screenshots</strong></summary>
 
+<img width="562" height="230" alt="Screenshot 2026-08-18 12 25 59 PM" src="https://github.com/user-attachments/assets/dd60ac41-34be-4d0e-88f4-cb054e533c82" /> <img width="562" height="230" alt="Screenshot2" src="https://github.com/user-attachments/assets/3de3928c-f487-4bd3-b315-a35b554007e8" /> <img width="562" height="230" alt="Screenshot1" src="https://github.com/user-attachments/assets/4f111c05-c901-4a4e-8210-7b7d80623dd1" />
+</details>
+
+### Why GronnFalk?
+You should use GronnFalk because the other metasearches make you pay for your own domain, hosting costs money, but on GronnFalk make your own free instance on Render or Railway with a piece of mind. Trust me I am a big fan of SearXNG, Whoogle, and 4get but it costs money to make your own domain. 
 
 ### License 
 
