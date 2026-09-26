@@ -155,8 +155,7 @@ The project is developed publicly on GitHub, where the community can explore the
 
 Need help or want to connect? Join the GronnFalk community:
 
-- [#gronnfalk:matrix.org](https://app.element.io/#/room/#gronnfalk:matrix.org)
-
+<table align="center"><tr><td><a href="https://app.element.io/#/room/#gronnfalk:matrix.org"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Element_(software)_logo_(2024).svg" width="48" height="48" alt="Element"></a></td><td align="center">&nbsp;&nbsp;&nbsp;&nbsp;<strong>Matrix</strong>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table>
 
 ## What GronnFalk is not
 
@@ -195,6 +194,9 @@ To see JSON and crawl GronnFalk go to this page:
 <a href="https://gronnfalk-api-aijg.onrender.com/">JSON API</a>
 
 ### License 
+<a href="https://www.apache.org/licenses/LICENSE-2.0.html">
+  <img src="1.png" alt="GronnFalk" width="200">
+</a>
 
 GronnFalk is licensed under the Apache License 2.0,
 <a href="https://github.com/LiamProsser77/gronnfalk/blob/main/LICENSE">For more see here.</a>
