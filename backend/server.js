@@ -4,7 +4,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const SEARXNG_API = "https://searx.dockhosting.dev";
+const SEARXNG_API = "https://searx-ie07.onrender.com/";
 const FOURGET_API = "https://search.yonderly.org/api/v1/web";
 const WIKIPEDIA_API = "https://en.wikipedia.org/api/rest_v1/page/summary/";
 

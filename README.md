@@ -20,7 +20,7 @@ GronnFalk is an open-source, privacy-focused metasearch engine built for a simpl
 <details>
   <summary><strong>Search Engines crawled by GronnFalk</strong></summary>
  
-  <a href="https://searx.dockhosting.dev/">SearXNG</a>
+  <a href="https://searx-ie07.onrender.com/">SearXNG</a>
   
   <a href="https://search.yonderly.org">4get</a>
   
