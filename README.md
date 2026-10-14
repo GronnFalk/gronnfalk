@@ -1,4 +1,4 @@
-<a href="https://liamprosser77.github.io/gronnfalk/?q=">
+<a href="https://liamprosser77.github.io/gronnfalk/">
   <img
     src="https://github.com/user-attachments/assets/cff7ab19-66cf-4a35-a67c-2268849c6e1b"
     alt="GronnFalk"
