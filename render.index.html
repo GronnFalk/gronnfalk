@@ -6,6 +6,9 @@
 
     <title>GronnFalk</title>
 
+    <script src="/theme.js"></script>
+    <link rel="stylesheet" href="/theme.css">
+
     <meta
         name="description"
         content="GronnFalk — an open-source, privacy-focused metasearch engine."
@@ -20,7 +23,8 @@
             margin: 0;
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            background: #ffffff;
+            background: var(--bg);
+            color: var(--text);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,9 +44,10 @@
         .search-box {
             display: flex;
             align-items: center;
-            border: 2px solid #222;
+            border: 2px solid var(--border-strong);
             border-radius: 30px;
             padding: 5px 10px 5px 20px;
+            background: var(--surface);
         }
 
         .search-box input {
@@ -52,11 +57,13 @@
             font-size: 18px;
             padding: 12px 0;
             background: transparent;
+            color: var(--text);
         }
 
         .search-box button {
             border: 0;
             background: transparent;
+            color: var(--text-muted);
             cursor: pointer;
             padding: 10px;
         }
@@ -73,14 +80,14 @@
             position: fixed;
             bottom: 25px;
             text-decoration: none;
-            color: #222;
+            color: var(--text-muted);
             font-size: 14px;
         }
 
         .status {
             margin-top: 15px;
             font-size: 13px;
-            color: #666;
+            color: var(--text-muted);
         }
     </style>
 </head>

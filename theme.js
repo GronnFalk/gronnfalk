@@ -1,0 +1,51 @@
+/*
+ * Theme preference: "system" (default), "light" or "dark".
+ * Load this synchronously in <head> so the theme is applied before first paint.
+ */
+(function () {
+    var STORAGE_KEY = "gronnfalk-theme";
+    var VALID = ["system", "light", "dark"];
+    var root = document.documentElement;
+
+    function getTheme() {
+        try {
+            var saved = localStorage.getItem(STORAGE_KEY);
+            return VALID.indexOf(saved) === -1 ? "system" : saved;
+        } catch (error) {
+            return "system";
+        }
+    }
+
+    function apply(theme) {
+        if (theme === "system") {
+            root.removeAttribute("data-theme");
+        } else {
+            root.setAttribute("data-theme", theme);
+        }
+    }
+
+    function setTheme(theme) {
+        if (VALID.indexOf(theme) === -1) {
+            theme = "system";
+        }
+
+        try {
+            localStorage.setItem(STORAGE_KEY, theme);
+        } catch (error) {
+            // Storage unavailable: the choice still applies to this page view.
+        }
+
+        apply(theme);
+    }
+
+    // Keep other open tabs in sync.
+    window.addEventListener("storage", function (event) {
+        if (event.key === STORAGE_KEY) {
+            apply(getTheme());
+        }
+    });
+
+    window.GronnFalkTheme = { get: getTheme, set: setTheme };
+
+    apply(getTheme());
+})();
