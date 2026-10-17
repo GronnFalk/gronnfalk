@@ -11,6 +11,9 @@
 
     <link rel="icon" type="image/png" href="favicon3.png">
 
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="theme.css">
+
     <style>
 
         * {
@@ -21,8 +24,8 @@
             margin: 0;
             min-height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #222;
+            background: var(--bg);
+            color: var(--text);
         }
 
         .settings-page {
@@ -52,11 +55,11 @@
         }
 
         .settings-section {
-            border: 1px solid #e5e5e5;
+            border: 1px solid var(--border);
             border-radius: 10px;
             padding: 22px;
             margin-bottom: 20px;
-            background: #ffffff;
+            background: var(--surface);
         }
 
         .settings-section h2 {
@@ -66,26 +69,26 @@
 
         .settings-section p {
             margin: 0 0 18px;
-            color: #666;
+            color: var(--text-muted);
             line-height: 1.5;
             font-size: 14px;
         }
 
-       /* Search Engines */
+       /* Settings options */
 
-        .engine-options {
+        .setting-options {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
-        .engine-option {
+        .setting-option {
             width: 100%;
             padding: 13px 15px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border);
             border-radius: 8px;
-            background: #ffffff;
-            color: #222;
+            background: var(--surface);
+            color: var(--text);
 
             display: flex;
             align-items: center;
@@ -96,8 +99,71 @@
             font-weight: bold;
         }
 
-        .engine-option:hover {
-            border-color: #8ee000;
+        .setting-option:hover {
+            border-color: var(--accent);
+        }
+
+        /* Theme picker (radio group) */
+
+        fieldset.theme-options {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            min-width: 0;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .theme-option {
+            cursor: pointer;
+        }
+
+        .theme-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .theme-option .theme-hint {
+            font-size: 13px;
+            font-weight: normal;
+            color: var(--text-muted);
+        }
+
+        .theme-option .theme-check {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            border: 2px solid var(--border-strong);
+            border-radius: 50%;
+        }
+
+        .theme-option:has(input:checked) {
+            border-color: var(--accent);
+            background: var(--surface-hover);
+        }
+
+        .theme-option:has(input:checked) .theme-check {
+            border-color: var(--accent);
+            background: radial-gradient(
+                var(--accent) 0 45%,
+                transparent 50%
+            );
+        }
+
+        .theme-option:has(input:focus-visible) {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
         }
 
         /* Toggle */
@@ -118,7 +184,7 @@
         .toggle-slider {
             position: absolute;
             inset: 0;
-            background: #ccc;
+            background: var(--toggle-off);
             border-radius: 25px;
             cursor: pointer;
             transition: 0.2s;
@@ -135,18 +201,23 @@
             left: 3px;
             top: 3px;
 
-            background: #ffffff;
+            background: var(--toggle-knob);
             border-radius: 50%;
 
             transition: 0.2s;
         }
 
         .toggle input:checked + .toggle-slider {
-            background: #8ee000;
+            background: var(--accent);
         }
 
         .toggle input:checked + .toggle-slider::before {
             transform: translateX(21px);
+        }
+
+        .toggle input:focus-visible + .toggle-slider {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
         }
 
         /* Back button */
@@ -160,8 +231,8 @@
 
             border-radius: 8px;
 
-            background: #8ee000;
-            color: #111;
+            background: var(--accent);
+            color: var(--on-accent);
 
             text-decoration: none;
 
@@ -228,10 +299,10 @@
         </p>
 
 
-        <div class="engine-options">
+        <div class="setting-options">
 
 
-            <div class="engine-option">
+            <div class="setting-option">
 
                 <span>
                     SearXNG
@@ -252,7 +323,7 @@
             </div>
 
 
-            <div class="engine-option">
+            <div class="setting-option">
 
                 <span>
                     Google
@@ -273,7 +344,7 @@
             </div>
 
 
-            <div class="engine-option">
+            <div class="setting-option">
 
                 <span>
                     DuckDuckGo
@@ -294,7 +365,7 @@
             </div>
 
 
-            <div class="engine-option">
+            <div class="setting-option">
 
                 <span>
                     Brave
@@ -315,7 +386,7 @@
             </div>
 
 
-            <div class="engine-option">
+            <div class="setting-option">
 
                 <span>
                     4get
@@ -337,6 +408,47 @@
 
 
         </div>
+
+    </section>
+
+    <!-- THEME -->
+
+    <section class="settings-section">
+
+        <h2>
+            Theme
+        </h2>
+
+        <p>
+            Choose how GronnFalk looks. "System" follows your device setting.
+        </p>
+
+        <fieldset class="theme-options setting-options">
+
+            <legend class="visually-hidden">Theme</legend>
+
+            <label class="setting-option theme-option">
+                <span>
+                    System
+                    <span class="theme-hint">&middot; match device</span>
+                </span>
+                <input type="radio" name="theme" value="system">
+                <span class="theme-check" aria-hidden="true"></span>
+            </label>
+
+            <label class="setting-option theme-option">
+                <span>Light</span>
+                <input type="radio" name="theme" value="light">
+                <span class="theme-check" aria-hidden="true"></span>
+            </label>
+
+            <label class="setting-option theme-option">
+                <span>Dark</span>
+                <input type="radio" name="theme" value="dark">
+                <span class="theme-check" aria-hidden="true"></span>
+            </label>
+
+        </fieldset>
 
     </section>
 
@@ -526,13 +638,46 @@
 
     });
 
+    /* =========================
+       THEME SETTINGS
+       ========================= */
+
+    const themeRadios =
+        document.querySelectorAll('input[name="theme"]');
+
+
+    themeRadios.forEach(function(radio) {
+
+        radio.checked =
+            radio.value === window.GronnFalkTheme.get();
+
+        radio.addEventListener("change", function() {
+
+            window.GronnFalkTheme.set(radio.value);
+
+        });
+
+    });
+
+    // Keep the picker in sync if the theme is changed in another tab.
+    window.addEventListener("storage", function() {
+
+        themeRadios.forEach(function(radio) {
+
+            radio.checked =
+                radio.value === window.GronnFalkTheme.get();
+
+        });
+
+    });
+
+
 
     /* =========================
        START SETTINGS
        ========================= */
 
     updateActiveLanguage();
-
     loadEngineSettings();
 
 </script>

@@ -4,6 +4,9 @@
 
 <title>GronnFalk Search</title> <link rel="icon" type="image/png" href="favicon3.png">
 
+<script src="theme.js"></script>
+<link rel="stylesheet" href="theme.css">
+
 <style>
     * {
         box-sizing: border-box;
@@ -12,8 +15,8 @@
     body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        background: #ffffff;
-        color: #222;
+        background: var(--bg);
+        color: var(--text);
     }
 
     .topbar {
@@ -21,13 +24,13 @@
         align-items: center;
         gap: 20px;
         padding: 18px 30px;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid var(--border);
     }
 
     .logo {
         font-size: 26px;
         font-weight: bold;
-        color: #8ee000;
+        color: var(--accent);
         text-decoration: none;
         white-space: nowrap;
     }
@@ -46,21 +49,27 @@
         flex: 1;
         padding: 13px 16px;
         font-size: 16px;
-        border: 1px solid #ccc;
+        border: 1px solid var(--border-strong);
         border-right: none;
         border-radius: 8px 0 0 8px;
         outline: none;
+        background: var(--surface);
+        color: var(--text);
+    }
+
+    .search-input::placeholder {
+        color: var(--text-subtle);
     }
 
     .search-input:focus {
-        border-color: #8ee000;
+        border-color: var(--accent);
     }
 
     .search-button {
         padding: 0 22px;
         border: none;
-        background: #8ee000;
-        color: #111;
+        background: var(--accent);
+        color: var(--on-accent);
         font-size: 16px;
         font-weight: bold;
         border-radius: 0 8px 8px 0;
@@ -81,14 +90,14 @@
         display: inline-block;
         margin-right: 25px;
         padding-bottom: 10px;
-        color: #555;
+        color: var(--text-muted);
         text-decoration: none;
         font-size: 15px;
     }
 
     .tabs a.active {
-        color: #111;
-        border-bottom: 2px solid #8ee000;
+        color: var(--text-strong);
+        border-bottom: 2px solid var(--accent);
         font-weight: bold;
     }
 
@@ -102,9 +111,9 @@
         display: none;
         margin-bottom: 30px;
         padding: 20px;
-        border: 1px solid #ddd;
+        border: 1px solid var(--border);
         border-radius: 10px;
-        background: #fafafa;
+        background: var(--surface);
     }
 
     .wikipedia-box.visible {
@@ -114,14 +123,14 @@
     .wikipedia-title {
         margin: 0 0 10px;
         font-size: 24px;
-        color: #222;
+        color: var(--text);
     }
 
     .wikipedia-label {
         margin-bottom: 6px;
         font-size: 13px;
         font-weight: bold;
-        color: #666;
+        color: var(--text-muted);
         text-transform: uppercase;
     }
 
@@ -141,13 +150,13 @@
 
     .wikipedia-description {
         margin: 0 0 12px;
-        color: #444;
+        color: var(--text-muted);
         line-height: 1.5;
         font-size: 15px;
     }
 
     .wikipedia-link {
-        color: #1769aa;
+        color: var(--link);
         text-decoration: none;
         font-size: 14px;
         font-weight: bold;
@@ -162,7 +171,7 @@
     }
 
     .result-url {
-        color: #555;
+        color: var(--text-muted);
         font-size: 14px;
         margin-bottom: 5px;
         word-break: break-all;
@@ -174,7 +183,7 @@
     }
 
     .result-title a {
-        color: #1769aa;
+        color: var(--link);
         text-decoration: none;
     }
 
@@ -183,14 +192,14 @@
     }
 
     .result-description {
-        color: #555;
+        color: var(--text-muted);
         line-height: 1.5;
         font-size: 15px;
     }
 
     .result-source {
         margin-top: 8px;
-        color: #777;
+        color: var(--text-subtle);
         font-size: 13px;
     }
 
@@ -204,12 +213,12 @@
     }
 
     .status {
-        color: #666;
+        color: var(--text-muted);
         padding: 20px 0;
     }
 
     .error {
-        color: #b00020;
+        color: var(--error);
     }
 
     @media (max-width: 700px) {
